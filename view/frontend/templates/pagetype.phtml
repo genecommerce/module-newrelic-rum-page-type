@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+$script = <<<SCRIPT
+    if (window.newrelic) {
+        newrelic.setCustomAttribute('pageType', '{$block->getRequest()->getFullActionName()}');
+    }
+    console.debug('Page type: {$block->getRequest()->getFullActionName()}');
+SCRIPT;
+?>
+<?= $secureRenderer->renderTag('script', ['type' => 'text/javascript'], $script, false) ?>
