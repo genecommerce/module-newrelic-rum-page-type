@@ -2,7 +2,7 @@
     "name": "gene/module-newrelic-extras",
     "description": "N/A",
     "require": {
-        "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0",
+        "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0||~8.4.0",
         "magento/framework": "*"
     },
     "type": "magento2-module",
