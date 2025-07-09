@@ -78,4 +78,4 @@ Tips
 
 ## Caveats
 
-New Relic RUM is not as complete as some other offerings, most notably it is missing [https://support.newrelic.com/s/hubtopic/aAXPh0000007Zgz/browser-monitoring-interaction-to-next-paint-inp-loaf-support](LoAF). However, if you already have New Relic and are not currently looking at your RUM data then this module may be enough to get you kick-started on that journey and making targeted improvements.   
+New Relic RUM is not as complete as some other offerings, most notably it is missing [LoAF](https://support.newrelic.com/s/hubtopic/aAXPh0000007Zgz/browser-monitoring-interaction-to-next-paint-inp-loaf-support). However, if you already have New Relic and are not currently looking at your RUM data then this module may be enough to get you kick-started on that journey and making targeted improvements.   
