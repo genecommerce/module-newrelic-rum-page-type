@@ -2,7 +2,7 @@
 
 Install this module to track your [Core Web Vitals](https://web.dev/articles/vitals) in New Relic by page type. This allows you to easily monitor and improve customers experience on your website.
 
-If you are hosted on Adobe Commerce Cloud you already have New Relic with full browser monitoring available! Install this module to quickly enhance your [RUM](https://newrelic.com/blog/best-practices/what-is-real-user-monitoring) setup and see what your customers are experiencing.
+🎉 If you are hosted on Adobe Commerce Cloud you already have New Relic with full browser monitoring available! 🎉 Install this module to quickly enhance your [RUM](https://newrelic.com/blog/best-practices/what-is-real-user-monitoring) setup and see what your customers are experiencing.
 
 ## Why install it?
 
@@ -42,12 +42,12 @@ It is best to view this data within a New Relic dashboard. We have prepared a da
 1. Replace the dummy `1234567` account ID with your actual New Relic account ID
 2. Replace `www.example.com` with your actual domain. 
 1. Log into New Relic
-   2. On the left panel click "Dashboards"
-   3. On the top right click "Import Dashboard"
-   4. Paste in the prepared JSON dashboard and import the "Core Web Vitals by PageType" dashboard.
-   5. You will now see a dashboard highlighting your Core Web Vitals.
+1. On the left panel click "Dashboards"
+3. On the top right click "Import Dashboard"
+4. Paste in the prepared JSON dashboard and import the "Core Web Vitals by PageType" dashboard.
+5. You will now see a dashboard highlighting your Core Web Vitals.
 
-This dashboard has a horizontal target line, your web vitals for desktop and mobile should be below this target line.
+This LCP/INP/CLS charts have a horizontal target line, your web vitals for desktop and mobile should be below this target line.
 
 ![New Relic Dashboard showing core web vitals with pageType filter](dev/filter-by-pagetype.png "New Relic Dashboard showing core web vitals with pageType filter")
 
@@ -61,10 +61,11 @@ This dashboard has a horizontal target line, your web vitals for desktop and mob
 1. When no filter is applied you can see the overall scores for your website. 
 2. By filtering through `catalog_product_view`, `catalog_category_view`, etc you can identify areas for improvement and whether they are most significantly affecting desktop or mobile devices.
 
-### (optional) 4. Set up automated alerting 
+### 4. Set up automated alerting 
 
 ![Set alert condition](dev/alert-condition.png "Set alert condition")
 
+1. After you have improved your web vitals you want to monitor them to prevent regression.
 1. From the dashboard click `...` on the top right of CLS/INP/LCP
 2. Create an alert condition
 3. Follow instructions from https://docs.newrelic.com/docs/tutorial-create-alerts/create-an-alert/
