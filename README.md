@@ -63,8 +63,6 @@ This LCP/INP/CLS charts have a horizontal target line, your web vitals for deskt
 
 ### 4. Set up automated alerting 
 
-![Set alert condition](dev/alert-condition.png "Set alert condition")
-
 1. After you have improved your web vitals you want to monitor them to prevent regression.
 1. From the dashboard click `...` on the top right of CLS/INP/LCP
 2. Create an alert condition
