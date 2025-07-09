@@ -2,9 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="before.body.end">
-            <block name="gene_newrelic_extras_page_type"
-                   ifconfig="gene_newrelic_extras/controller_attribute/enable"
-                   template="Gene_NewrelicExtras::pagetype.phtml">
+            <block name="gene_newrelicrumpagetype_extras_page_type"
+                   ifconfig="gene_newrelicrumpagetype_extras/controller_attribute/enable"
+                   template="Gene_NewrelicRumPageType::pagetype.phtml">
             </block>
         </referenceContainer>
     </body>

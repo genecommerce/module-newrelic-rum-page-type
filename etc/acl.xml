@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Gene_NewrelicExtras::config_gene_newrelic_extras" title="Gene NewrelicExtras"/>
+                            <resource id="Gene_NewrelicRumPageType::config_gene_newrelicrumpagetype_extras" title="Gene NewrelicRumPageType"/>
                         </resource>
                     </resource>
                 </resource>

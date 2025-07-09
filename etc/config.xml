@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <gene_newrelic_extras>
+        <gene_newrelicrumpagetype_extras>
             <controller_attribute>
                 <enable>1</enable>
             </controller_attribute>
-        </gene_newrelic_extras>
+        </gene_newrelicrumpagetype_extras>
     </default>
 </config>

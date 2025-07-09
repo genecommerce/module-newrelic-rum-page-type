@@ -2,4 +2,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Gene_NewrelicExtras', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Gene_NewrelicRumPageType', __DIR__);

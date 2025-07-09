@@ -4,10 +4,10 @@
         <tab id="gene" translate="label" sortOrder="999">
             <label>Gene</label>
         </tab>
-        <section id="gene_newrelic_extras" sortOrder="10" showInDefault="1" translate="label">
+        <section id="gene_newrelicrumpagetype_extras" sortOrder="10" showInDefault="1" translate="label">
             <label>NewRelic</label>
             <tab>gene</tab>
-            <resource>Gene_NewrelicExtras::config_gene_newrelic_extras</resource>
+            <resource>Gene_NewrelicRumPageType::config_gene_newrelicrumpagetype_extras</resource>
             <group id="controller_attribute" sortOrder="10" showInDefault="1" translate="label">
                 <label>Controller attribute</label>
                 <field id="enable" type="select" sortOrder="10" showInDefault="1" translate="label">

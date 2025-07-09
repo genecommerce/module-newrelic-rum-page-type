@@ -1,5 +1,5 @@
 {
-    "name": "gene/module-newrelic-extras",
+    "name": "gene/module-newrelic-rum-page-type",
     "description": "N/A",
     "require": {
         "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0||~8.4.0",
@@ -11,7 +11,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Gene\\NewrelicExtras\\": ""
+            "Gene\\NewrelicRumPageType\\": ""
         }
     }
 }
