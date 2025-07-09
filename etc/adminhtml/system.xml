@@ -5,7 +5,7 @@
             <label>Gene</label>
         </tab>
         <section id="gene_newrelicrumpagetype_extras" sortOrder="10" showInDefault="1" translate="label">
-            <label>NewRelic</label>
+            <label>NewRelic RUM PageType</label>
             <tab>gene</tab>
             <resource>Gene_NewrelicRumPageType::config_gene_newrelicrumpagetype_extras</resource>
             <group id="controller_attribute" sortOrder="10" showInDefault="1" translate="label">
