@@ -13,7 +13,7 @@ To be able to make impactful changes we need to tbe able to answer questions lik
 - What are customers experiencing on product pages?
 - What are customers experiencing in the checkout?
 
-By adding this module you will have this level of detail and be able to make more informed decisions, and stay ahead of any regressions.
+By adding this module you will have this level of detail and be able to make more informed decisions and stay ahead of any regressions.
 
 ## Installation
 
