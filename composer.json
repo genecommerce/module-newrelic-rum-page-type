@@ -1,6 +1,7 @@
 {
     "name": "gene/module-newrelic-rum-page-type",
-    "description": "N/A",
+    "description": "Track pageType in New Relic Real User Monitoring",
+    "license": "LGPL-3.0-only",
     "require": {
         "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0||~8.4.0",
         "magento/framework": "*"

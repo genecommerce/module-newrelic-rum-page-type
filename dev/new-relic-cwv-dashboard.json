@@ -1,0 +1,137 @@
+{
+  "name": "Core Web Vitals by PageType",
+  "description": null,
+  "permissions": "PUBLIC_READ_WRITE",
+  "pages": [
+    {
+      "name": "Core Web Vitals",
+      "description": null,
+      "widgets": [
+        {
+          "title": "LCP",
+          "layout": {
+            "column": 1,
+            "row": 1,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(largestContentfulPaint,75) as 'LCP', 2.5 AS 'LCP Target' FROM PageView, PageViewTiming  WHERE largestContentfulPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "INP",
+          "layout": {
+            "column": 5,
+            "row": 1,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(interactionToNextPaint,75) AS 'INP', 0.2 AS 'INP Target' FROM PageView, PageViewTiming  WHERE interactionToNextPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "CLS",
+          "layout": {
+            "column": 9,
+            "row": 1,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(cumulativeLayoutShift,75) as 'CLS', 0.1 AS 'CLS Target' FROM PageView, PageViewTiming  WHERE cumulativeLayoutShift IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variables": []
+}
