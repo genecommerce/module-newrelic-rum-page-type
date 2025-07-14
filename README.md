@@ -1,8 +1,8 @@
 # gene/module-newrelic-rum-page-type
 
-Install this module to track your [Core Web Vitals](https://web.dev/articles/vitals) in New Relic by page type. This allows you to easily monitor and improve customers experience on your website.
+Install this module to easily monitor and improve customer experience by tracking [Core Web Vitals](https://web.dev/articles/vitals) in New Relic by page type and enhancing your [RUM](https://newrelic.com/blog/best-practices/what-is-real-user-monitoring) setup.
 
-🎉 If you are hosted on Adobe Commerce Cloud you already have New Relic with browser monitoring available! 🎉 Install this module to quickly enhance your [RUM](https://newrelic.com/blog/best-practices/what-is-real-user-monitoring) setup and see what your customers are experiencing.
+🎉 If you are hosted on Adobe Commerce Cloud you already have New Relic with browser monitoring available! 🎉 
 
 ## Why install it?
 
