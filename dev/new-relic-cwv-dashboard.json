@@ -8,7 +8,7 @@
       "description": null,
       "widgets": [
         {
-          "title": "LCP",
+          "title": "LCP - Overall",
           "layout": {
             "column": 1,
             "row": 1,
@@ -25,6 +25,14 @@
             },
             "legend": {
               "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
             },
             "nrqlQueries": [
               {
@@ -49,14 +57,14 @@
           }
         },
         {
-          "title": "INP",
+          "title": "INP - Overall",
           "layout": {
             "column": 5,
             "row": 1,
             "width": 4,
             "height": 3
           },
-          "linkedEntityGuids": null,
+          "linkedEntityGuids": [],
           "visualization": {
             "id": "viz.line"
           },
@@ -66,6 +74,14 @@
             },
             "legend": {
               "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
             },
             "nrqlQueries": [
               {
@@ -90,14 +106,14 @@
           }
         },
         {
-          "title": "CLS",
+          "title": "CLS - Overall",
           "layout": {
             "column": 9,
             "row": 1,
             "width": 4,
             "height": 3
           },
-          "linkedEntityGuids": null,
+          "linkedEntityGuids": [],
           "visualization": {
             "id": "viz.line"
           },
@@ -108,12 +124,461 @@
             "legend": {
               "enabled": true
             },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
             "nrqlQueries": [
               {
                 "accountIds": [
                   1234567
                 ],
                 "query": "SELECT percentile(cumulativeLayoutShift,75) as 'CLS', 0.1 AS 'CLS Target' FROM PageView, PageViewTiming  WHERE cumulativeLayoutShift IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Product",
+          "layout": {
+            "column": 1,
+            "row": 4,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(largestContentfulPaint,75) as 'LCP', 2.5 AS 'LCP Target' FROM PageView, PageViewTiming  WHERE largestContentfulPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_product_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "INP - Product",
+          "layout": {
+            "column": 5,
+            "row": 4,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(interactionToNextPaint,75) AS 'INP', 0.2 AS 'INP Target' FROM PageView, PageViewTiming  WHERE interactionToNextPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_product_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "CLS - Product",
+          "layout": {
+            "column": 9,
+            "row": 4,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(cumulativeLayoutShift,75) as 'CLS', 0.1 AS 'CLS Target' FROM PageView, PageViewTiming  WHERE cumulativeLayoutShift IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_product_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Listings",
+          "layout": {
+            "column": 1,
+            "row": 7,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(largestContentfulPaint,75) as 'LCP', 2.5 AS 'LCP Target' FROM PageView, PageViewTiming  WHERE largestContentfulPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_category_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "INP - Listings",
+          "layout": {
+            "column": 5,
+            "row": 7,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(interactionToNextPaint,75) AS 'INP', 0.2 AS 'INP Target' FROM PageView, PageViewTiming  WHERE interactionToNextPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_category_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "CLS - Listings",
+          "layout": {
+            "column": 9,
+            "row": 7,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(cumulativeLayoutShift,75) as 'CLS', 0.1 AS 'CLS Target' FROM PageView, PageViewTiming  WHERE cumulativeLayoutShift IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='catalog_category_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Checkout",
+          "layout": {
+            "column": 1,
+            "row": 10,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(largestContentfulPaint,75) as 'LCP', 2.5 AS 'LCP Target' FROM PageView, PageViewTiming  WHERE largestContentfulPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com' AND pageType='checkout_index_index'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "INP - Checkout",
+          "layout": {
+            "column": 5,
+            "row": 10,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(interactionToNextPaint,75) AS 'INP', 0.2 AS 'INP Target' FROM PageView, PageViewTiming  WHERE interactionToNextPaint IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'  AND pageType='checkout_index_index'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "CLS - Checkout",
+          "layout": {
+            "column": 9,
+            "row": 10,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(cumulativeLayoutShift,75) as 'CLS', 0.1 AS 'CLS Target' FROM PageView, PageViewTiming  WHERE cumulativeLayoutShift IS NOT NULL TIMESERIES SINCE 9 days AGO FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop')  WHERE domain = 'www.example.com'  AND pageType='checkout_index_index'"
               }
             ],
             "platformOptions": {
