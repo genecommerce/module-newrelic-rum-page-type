@@ -8,11 +8,76 @@
       "description": null,
       "widgets": [
         {
-          "title": "LCP - Overall",
+          "title": null,
           "layout": {
             "column": 1,
             "row": 1,
-            "width": 4,
+            "width": 12,
+            "height": 1
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.markdown"
+          },
+          "rawConfiguration": {
+            "text": "Use the below graphs to understand your Web Vitals across different page types. For further details on device types, browser, etc you can view the more in \"Browser -> {Your frontend} -> Web Vitals\"\n\nhttps://web.dev/articles/lcp | https://web.dev/articles/inp | https://web.dev/articles/cls | https://developer.chrome.com/docs/devtools/performance/overview"
+          }
+        },
+        {
+          "title": "Observed TTFB - Overall",
+          "layout": {
+            "column": 1,
+            "row": 2,
+            "width": 3,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(backendDuration,75) as 'TTFB' FROM PageView, PageViewTiming  WHERE backendDuration IS NOT NULL TIMESERIES since 9 days ago FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop') WHERE domain = 'www.example.com'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Overall",
+          "layout": {
+            "column": 4,
+            "row": 2,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": null,
@@ -59,9 +124,9 @@
         {
           "title": "INP - Overall",
           "layout": {
-            "column": 5,
-            "row": 1,
-            "width": 4,
+            "column": 7,
+            "row": 2,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -108,9 +173,9 @@
         {
           "title": "CLS - Overall",
           "layout": {
-            "column": 9,
-            "row": 1,
-            "width": 4,
+            "column": 10,
+            "row": 2,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -155,11 +220,60 @@
           }
         },
         {
-          "title": "LCP - Product",
+          "title": "Observed TTFB - Product",
           "layout": {
             "column": 1,
-            "row": 4,
-            "width": 4,
+            "row": 5,
+            "width": 3,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(backendDuration,75) as 'TTFB' FROM PageView, PageViewTiming  WHERE backendDuration IS NOT NULL TIMESERIES since 9 days ago FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop') WHERE domain = 'www.example.com' AND pageType='catalog_product_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Product",
+          "layout": {
+            "column": 4,
+            "row": 5,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -206,9 +320,9 @@
         {
           "title": "INP - Product",
           "layout": {
-            "column": 5,
-            "row": 4,
-            "width": 4,
+            "column": 7,
+            "row": 5,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -255,9 +369,9 @@
         {
           "title": "CLS - Product",
           "layout": {
-            "column": 9,
-            "row": 4,
-            "width": 4,
+            "column": 10,
+            "row": 5,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -302,11 +416,60 @@
           }
         },
         {
-          "title": "LCP - Listings",
+          "title": "Observed TTFB - Listings",
           "layout": {
             "column": 1,
-            "row": 7,
-            "width": 4,
+            "row": 8,
+            "width": 3,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(backendDuration,75) as 'TTFB' FROM PageView, PageViewTiming  WHERE backendDuration IS NOT NULL TIMESERIES since 9 days ago FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop') WHERE domain = 'www.example.com' AND pageType='catalog_category_view'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Listings",
+          "layout": {
+            "column": 4,
+            "row": 8,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -353,9 +516,9 @@
         {
           "title": "INP - Listings",
           "layout": {
-            "column": 5,
-            "row": 7,
-            "width": 4,
+            "column": 7,
+            "row": 8,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -402,9 +565,9 @@
         {
           "title": "CLS - Listings",
           "layout": {
-            "column": 9,
-            "row": 7,
-            "width": 4,
+            "column": 10,
+            "row": 8,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -449,11 +612,60 @@
           }
         },
         {
-          "title": "LCP - Checkout",
+          "title": "Observed TTFB - Checkout",
           "layout": {
             "column": 1,
-            "row": 10,
-            "width": 4,
+            "row": 11,
+            "width": 3,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "legend": {
+              "enabled": true
+            },
+            "markers": {
+              "displayedTypes": {
+                "criticalViolations": false,
+                "deployments": true,
+                "relatedDeployments": true,
+                "warningViolations": false
+              }
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  1234567
+                ],
+                "query": "SELECT percentile(backendDuration,75) as 'TTFB' FROM PageView, PageViewTiming  WHERE backendDuration IS NOT NULL TIMESERIES since 9 days ago FACET CASES(WHERE deviceType = 'Mobile' as 'Mobile', WHERE deviceType = 'Desktop' as 'Desktop') WHERE domain = 'www.example.com' AND pageType='checkout_index_index'"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            },
+            "thresholds": {
+              "isLabelVisible": true
+            },
+            "yAxisLeft": {
+              "zero": true
+            },
+            "yAxisRight": {
+              "zero": true
+            }
+          }
+        },
+        {
+          "title": "LCP - Checkout",
+          "layout": {
+            "column": 4,
+            "row": 11,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -500,9 +712,9 @@
         {
           "title": "INP - Checkout",
           "layout": {
-            "column": 5,
-            "row": 10,
-            "width": 4,
+            "column": 7,
+            "row": 11,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],
@@ -549,9 +761,9 @@
         {
           "title": "CLS - Checkout",
           "layout": {
-            "column": 9,
-            "row": 10,
-            "width": 4,
+            "column": 10,
+            "row": 11,
+            "width": 3,
             "height": 3
           },
           "linkedEntityGuids": [],

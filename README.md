@@ -56,10 +56,15 @@ This LCP/INP/CLS charts have a horizontal target line, your web vitals for deskt
 1. Install this module on production. PageViewTiming metrics within New Relic will now have their `pageType` value attached. 
 2. Give it at least 24 hours for data to start filtering through, depending on your site and setup you may find patterns that some periods are slower when imports/exports are being triggered. 
 
-### 3. Filter by pageType to identify areas for improvement
+### 3. Make improvements for specific pageTypes
 
-1. When no filter is applied you can see the overall scores for your website. 
+1. When no filter is applied you can see the overall scores for your website, as well as other key pageTypes.
 2. By filtering through `catalog_product_view`, `catalog_category_view`, etc you can identify areas for improvement and whether they are most significantly affecting desktop or mobile devices.
+3. Use the [Chrome Performance Panel](https://developer.chrome.com/docs/devtools/performance/overview)
+     1. Compare your experience to the experience of real users
+     1. Configure your environment to better match that of the real users 
+     1. Investigate the additional panels, in particular the "rendering panel" can be very useful in improving CLS
+1. After you deploy a fix it may take some time for it to become fully visible in your dashboard graphs.
 
 ### 4. Set up automated alerting 
 
